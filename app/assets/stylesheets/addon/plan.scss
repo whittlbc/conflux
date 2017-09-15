@@ -1,0 +1,103 @@
+@import 'global-vars';
+
+.plans-list {
+  list-style-type: none;
+  width: 100%;
+  float: left;
+  margin-top: 14px;
+
+  .plan-option {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #E7E7EC;
+    margin-top: 7px;
+    padding: 0 12px;
+    padding-top: 11px;
+    font-size: 13px;
+    float: left;
+    color: $conflux-black;
+    cursor: pointer;
+
+    .name {
+      float: left;
+      float: left;
+      max-width: 155px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .price {
+      float: right;
+    }
+  }
+
+  .plan-option:first-child {
+    margin-top: 0;
+  }
+
+  .plan-option:hover,
+  .plan-option:active {
+    background-color: #f4f4f8;
+    border: 1px solid #e0e0e4;
+  }
+
+  .plan-option.selected {
+    background-color: $conflux-black;
+    border: none;
+    color: white;
+  }
+
+  .plan-option.na {
+    opacity: 0.3;
+    border: 1px solid rgba(0,0,0,0.3);
+    cursor: not-allowed;
+
+    // Don't change on hover
+    &:hover {
+      border: 1px solid rgba(0,0,0,0.3);
+      background-color: white;
+    }
+  }
+
+  &.no-write {
+    .plan-option {
+      opacity: 0.3;
+      border: 1px solid rgba(0,0,0,0.3);
+      cursor: not-allowed;
+
+      &:hover,
+      &:active {
+        border: 1px solid rgba(0,0,0,0.3);
+        background-color: white;
+      }
+    }
+
+    .plan-option.selected {
+      cursor: default;
+
+      &:hover,
+      &:active {
+        background-color: $conflux-black;
+      }
+    }
+  }
+
+  .tooltip {
+    &.in {
+      opacity: 1;
+    }
+  }
+
+  .tooltip-arrow {
+    border-top-color: $conflux-green;
+  }
+
+  .tooltip-inner {
+    background-color: $conflux-green;
+    color: white;
+    padding: 10px;
+  }
+}

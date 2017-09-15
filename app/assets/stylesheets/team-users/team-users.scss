@@ -1,0 +1,232 @@
+@import 'global-vars';
+
+$padding-top: 60px;
+$padding-sides: 55px;
+
+#teamUsers {
+  width: 100%;
+  height: 100%;
+  float: left;
+  padding-top: $padding-top;
+  padding-left: $padding-sides;
+  padding-right: $padding-sides;
+}
+
+#teamUsersHeader {
+  height: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+  width: 100%;
+
+  .team-users-header-left {
+    display: inline-block;
+    float: left;
+
+    .left-header-title {
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .header-linebreak {
+    margin-top: 6px;
+  }
+
+  .add-members-btn {
+    display: inline-block;
+    float: left;
+    margin-left: 16px;
+    color: $conflux-green;
+    font-size: 13px;
+    cursor: pointer;
+    height: 100%;
+    line-height: 41px;
+
+    .text {
+      display: inline-block;
+      height: 100%;
+    }
+
+    .text:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  .members-total {
+    display: inline-block;
+    float: left;
+    margin-left: 16px;
+    color: rgba(140,140,160,0.6);
+    font-size: 13px;
+    line-height: 41px;
+  }
+
+}
+
+#teamUsersList {
+  float: left;
+  width: 100%;
+  list-style-type: none;
+
+  li {
+    float: left;
+    width: 100%;
+  }
+
+  li:first-child {
+    border-top: 1px solid #E7E7E7;
+  }
+
+  li {
+    border-bottom: 1px solid #E7E7EC;
+    height: 56px;
+
+    .team-user {
+      float: left;
+      width: 100%;
+      height: 100%;
+
+      .team-user-pic,
+      .team-user-name {
+        display: inline-block;
+        float: left;
+      }
+
+      .team-user-pic {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        margin-top: 12px;
+        margin-left: 16px;
+        margin-right: 15px;
+        background-color: rgba(140, 140, 160, 0.45);
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+        }
+
+        img.no-pic {
+          width: 22px;
+          height: 22px;
+          border-radius: 9px;
+          margin-top: 6px;
+          margin-left: 4px;
+        }
+      }
+
+      .team-user-name {
+        color: $conflux-black;
+        font-size: 14px;
+        padding-top: 17px;
+        max-width: calc(100% - 61px - 137px - 47px - 25px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: default;
+
+        .name {
+          color: rgba(140,140,160,0.75);
+        }
+      }
+
+      .team-user-label {
+        display: inline-block;
+        float: right;
+        color: $conflux-green;
+        font-size: 12.5px;
+        padding-top: 18px;
+        margin-right: 16px;
+      }
+
+      .team-user-action-icons {
+        display: inline-block;
+        float: right;
+        font-size: 15px;
+        padding-top: 17px;
+        margin-right: 10px;
+        color: rgba(140, 140, 160, 0.45);
+
+        i {
+          cursor: pointer;
+
+          &:hover,
+          &:active {
+            color: rgba(140, 140, 160, 0.9);
+          }
+        }
+
+        i.edit {
+          margin-right: 12px;
+        }
+      }
+
+    }
+
+  }
+}
+
+@media (max-width: 799px) {
+ #teamUsers {
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+}
+
+@media (max-width: 579px) {
+
+  #teamUsers {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #teamUsersList {
+    margin-top: 10px;
+
+    li {
+      .team-user {
+        .team-user-label {
+          font-size: 12px;
+        }
+
+        .team-user-pic {
+          display: none;
+        }
+
+        .team-user-name {
+          font-size: 12px;
+          margin-left: 8px;
+          max-width: calc(100% - 10px - 132px - 47px - 10px);
+        }
+      }
+    }
+  }
+
+
+  #teamUsersHeader {
+    .team-users-header-left {
+      width: 100%;
+
+      .left-header-title {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .header-linebreak {
+      display: none;
+    }
+
+    .add-members-btn {
+      margin-left: 0;
+      margin-top: 5px;
+    }
+  }
+}

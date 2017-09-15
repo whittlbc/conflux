@@ -1,0 +1,174 @@
+@import 'global-vars';
+
+#tiersList {
+  float: left;
+  width: 100%;
+
+  li,
+  .tier {
+    width: 100%;
+    float: left;
+  }
+
+  .tier {
+    margin-bottom: 30px;
+  }
+
+  li:last-child {
+    .tier {
+      margin-bottom: 0;
+    }
+  }
+
+  .tier-name {
+    float: left;
+    font-size: 11px;
+    color: $conflux-green;
+    text-transform: uppercase;
+    display: inline-block;
+    height: 15px;
+    margin-bottom: 9.5px;
+    padding-left: 6px;
+  }
+
+  .tier-apps-list {
+    float: left;
+    width: 100%;
+
+    a,
+    li {
+      float: left;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:first-child > li {
+      border-top: 1px solid #E7E7E7;
+    }
+
+    li {
+      border-bottom: 1px solid #E7E7EC;
+      height: 56px;
+
+      .no-apps-for-tier,
+      .pipeline-view-apps-off-limits,
+      .app-list-item {
+        float: left;
+        width: 100%;
+        height: 100%;
+      }
+
+      .no-apps-for-tier,
+      .pipeline-view-apps-off-limits {
+        background-color: #F5F5F9;
+        text-align: center;
+        color: $header-dark-text-color;
+        font-size: 12px;
+        padding-top: 20px;
+      }
+
+      .add-first-app-to-tier {
+        color: $conflux-green;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+
+      .app-list-item {
+
+        .app-icon,
+        .app-name {
+          display: inline-block;
+          float: left;
+        }
+
+        .app-icon,
+        .clone-icon {
+          width: 24px;
+          height: 24px;
+          margin-top: 16px;
+          margin-left: 16px;
+          margin-right: 16px;
+        }
+
+        .app-name {
+          color: $header-dark-text-color;
+          font-size: 14px;
+          padding-top: 17px;
+          width: calc(100% - 72px - 62px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .clone-icon {
+          float: right;
+          display: inline-block;
+          font-size: 19px;
+          text-align: center;
+          padding-top: 2px;
+          color: rgba(0,0,0,0.3);
+          margin-right: 22px;
+          opacity: 0;
+          -webkit-transition: opacity 0.15s;
+          -moz-transition: opacity 0.15s;
+          -ms-transition: opacity 0.15s;
+          -o-transition: opacity 0.15s;
+          transition: opacity 0.15s;
+
+          &:hover {
+            color: rgba(0,0,0,0.2);
+          }
+
+          &:active {
+            color: rgba(0,0,0,0.3);
+          }
+
+        }
+
+      }
+
+      &:hover {
+        .clone-icon {
+          opacity: 1;
+        }
+      }
+
+      .tooltip-inner {
+        max-width: 125px;
+      }
+
+    }
+
+    li.none {
+      border: none;
+    }
+
+  }
+
+}
+
+@media (max-width: 579px) {
+  // goddamn it sass
+  #tiersList {
+    .tier-apps-list {
+      li {
+        .app-list-item {
+          .app-name {
+            width: calc(100% - 72px);
+          }
+
+          .clone-icon {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

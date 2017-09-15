@@ -1,0 +1,15 @@
+@import 'global-vars';
+
+#csBody {
+  margin-left: 230px;
+}
+
+#csBody.no-menu {
+  margin-left: 0;
+}
+
+@media (max-width: 991px) {
+  #csBody {
+    margin-left: 0;
+  }
+}

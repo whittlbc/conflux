@@ -1,0 +1,160 @@
+@import 'global-vars';
+@import 'app/vars';
+
+[data-react-class="App"] {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  float: left;
+  padding-top: $padding-top;
+  padding-left: $padding-sides;
+  padding-right: $padding-sides;
+  position: relative;
+
+  .show-api-key-btn {
+    position: absolute;
+    top: 76px;
+    right: 51px;
+    display: inline-block;
+    float: right;
+    cursor: default;
+    text-align: right;
+    font-size: 12px;
+    color: rgba(91, 91, 91, 0.8);
+
+    .clickable {
+      cursor: pointer;
+    }
+  }
+}
+
+#appHeader {
+  height: $header-height;
+  margin-top: $header-margin-top;
+  margin-bottom: $header-margin-bottom;
+  padding-left: $header-padding-sides;
+  padding-right: $header-padding-sides;
+  float: left;
+  width: 100%;
+
+  .header-linebreak {
+    margin-top: 6px;
+  }
+
+  .app-header-icon {
+    float: left;
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    margin-right: 13px;
+    margin-top: 7px;
+    margin-left: 2px;
+  }
+}
+
+.left-header-title,
+.header-linebreak {
+  display: inline-block;
+  float: left;
+}
+
+.left-header-title {
+  margin-top: 5px;
+  padding-right: 16px;
+  font-size: 21px;
+  color: #111;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#appHeader {
+  .left-header-title {
+    max-width: calc(50% - 49px);
+  }
+}
+
+.header-linebreak {
+  width: 1px;
+  height: 27px;
+  background-color: rgba(0,0,0,0.09);
+}
+
+.monthly-cost {
+  float: right;
+  text-align: right;
+  padding-right: 8px;
+  display: inline-block;
+  color: rgba(64, 75, 85, 0.8);
+  font-size: 14px;
+  margin-bottom: 42px;
+
+  .figure {
+    margin-left: 10px;
+  }
+}
+
+.no-addons-view {
+  width: 98%;
+  text-align: center;
+  line-height: 24px;
+  color: rgba(64, 75, 85, 0.8);
+  font-size: 13px;
+  margin-top: 25px;
+  background-color: #F5F5F9;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 68px 30px;
+
+  &.no-write-access {
+    padding: 79px;
+  }
+}
+
+#app.full-width-search {
+  #appHeader {
+    margin-bottom: 70px;
+
+    .header-linebreak {
+      display: none;
+    }
+  }
+}
+
+.addons-count {
+  float: left;
+  display: inline-block;
+  color: rgba(140,140,160,0.6);
+  margin-left: 16px;
+  height: 100%;
+  font-size: 12px;
+  padding-top: 12px;
+}
+
+@media (max-width: 579px) {
+  #appHeader {
+    margin-bottom: 70px;
+
+    .left-header-title {
+      max-width: calc(100% - 49px);
+    }
+
+    .header-linebreak,
+    .addons-count {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  #app {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
